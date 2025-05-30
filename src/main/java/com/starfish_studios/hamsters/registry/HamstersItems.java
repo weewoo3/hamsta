@@ -8,7 +8,7 @@ import net.minecraft.class_1747;
 import net.minecraft.class_1792;
 import net.minecraft.class_1826;
 import net.minecraft.class_2378;
-import net.minecraft.class_2960;
+import net.minecraft.util.Identifier;
 import net.minecraft.class_7923;
 
 public class HamstersItems {
@@ -17,14 +17,14 @@ public class HamstersItems {
    public static final class_1747 HAMSTER_WHEEL;
 
    public static <T extends class_1792> Supplier<T> registerItem(String name, Supplier<T> item) {
-      T registry = (class_1792)class_2378.method_10230(class_7923.field_41178, new class_2960("hamsters", name), (class_1792)item.get());
+      T registry = (class_1792)class_2378.method_10230(class_7923.field_41178, new Identifier("hamsters", name), (class_1792)item.get());
       return () -> {
          return registry;
       };
    }
 
    private static class_1792 register(String id, class_1792 item) {
-      return (class_1792)class_2378.method_10230(class_7923.field_41178, new class_2960("hamsters", id), item);
+      return (class_1792)class_2378.method_10230(class_7923.field_41178, new Identifier("hamsters", id), item);
    }
 
    static {

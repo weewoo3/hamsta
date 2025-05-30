@@ -1,27 +1,27 @@
 package com.starfish_studios.hamsters.client.model;
 
 import com.starfish_studios.hamsters.entity.Hamster;
-import net.minecraft.class_1921;
-import net.minecraft.class_2960;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.util.Identifier;
 import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
 import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 
 public class HamsterModel extends DefaultedEntityGeoModel<Hamster> {
    public HamsterModel() {
-      super(new class_2960("hamsters", "hamster"), true);
+      super(new Identifier("hamsters", "hamster"), true);
    }
 
-   public class_2960 getTextureResource(Hamster animatable) {
-      return new class_2960("hamsters", "textures/entity/hamster/orange.png");
+   public Identifier getTextureResource(Hamster animatable) {
+      return new Identifier("hamsters", "textures/entity/hamster/orange.png");
    }
 
-   public class_2960 getAnimationResource(Hamster animatable) {
-      return new class_2960("hamsters", "animations/hamster.animation.json");
+   public Identifier getAnimationResource(Hamster animatable) {
+      return new Identifier("hamsters", "animations/hamster.animation.json");
    }
 
-   public class_1921 getRenderType(Hamster animatable, class_2960 texture) {
-      return class_1921.method_23578(texture);
+   public RenderLayer getRenderType(Hamster animatable, Identifier texture) {
+      return RenderLayer.method_23578(texture);
    }
 
    public void setCustomAnimations(Hamster animatable, long instanceId, AnimationState<Hamster> animationState) {

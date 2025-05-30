@@ -9,10 +9,10 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.fabric.impl.blockrenderlayer.BlockRenderLayerMapImpl;
-import net.minecraft.class_1921;
-import net.minecraft.class_2487;
-import net.minecraft.class_2960;
-import net.minecraft.class_5272;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.util.Identifier;
+import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import software.bernie.geckolib.GeckoLib;
 
 @Environment(EnvType.CLIENT)
@@ -21,8 +21,8 @@ public class HamstersClient implements ClientModInitializer {
       HamstersVanillaIntegration.Client.clientInit();
       registerRenderers();
       GeckoLib.initialize();
-      class_5272.method_27879(HamstersItems.HAMSTER, new class_2960("variant"), (stack, world, entity, num) -> {
-         class_2487 compoundTag = stack.method_7969();
+      ModelPredicateProviderRegistry.method_27879(HamstersItems.HAMSTER, new Identifier("variant"), (stack, world, entity, num) -> {
+         NbtCompound compoundTag = stack.method_7969();
          return compoundTag != null && compoundTag.method_10545("Variant") ? (float)compoundTag.method_10550("Variant") / 7.0F : 0.333F;
       });
    }
@@ -31,6 +31,6 @@ public class HamstersClient implements ClientModInitializer {
       BlockEntityRendererRegistry.register(HamstersBlockEntities.HAMSTER_WHEEL, (context) -> {
          return new HamsterWheelRenderer();
       });
-      BlockRenderLayerMapImpl.INSTANCE.putBlock(HamstersBlocks.HAMSTER_WHEEL, class_1921.method_23581());
+      BlockRenderLayerMapImpl.INSTANCE.putBlock(HamstersBlocks.HAMSTER_WHEEL, RenderLayer.method_23581());
    }
 }

@@ -3,23 +3,23 @@ package com.starfish_studios.hamsters.client.renderer;
 import com.starfish_studios.hamsters.entity.SeatEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.class_2561;
-import net.minecraft.class_2960;
-import net.minecraft.class_4587;
-import net.minecraft.class_4597;
-import net.minecraft.class_897;
-import net.minecraft.class_5617.class_5618;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.entity.EntityRenderer;
+import net.minecraft.client.render.entity.EntityRendererFactory.Context;
 
 @Environment(EnvType.CLIENT)
-public class SeatRenderer extends class_897<SeatEntity> {
-   public SeatRenderer(class_5618 context) {
+public class SeatRenderer extends EntityRenderer<SeatEntity> {
+   public SeatRenderer(Context context) {
       super(context);
    }
 
-   public class_2960 getTextureLocation(SeatEntity seatEntity) {
+   public Identifier getTextureLocation(SeatEntity seatEntity) {
       return null;
    }
 
-   protected void renderNameTag(SeatEntity entity, class_2561 component, class_4587 stack, class_4597 source, int light) {
+   protected void renderNameTag(SeatEntity entity, Text component, MatrixStack stack, VertexConsumerProvider source, int light) {
    }
 }

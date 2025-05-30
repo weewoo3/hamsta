@@ -7,16 +7,16 @@ import java.util.function.Supplier;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.minecraft.class_1297;
-import net.minecraft.class_1299;
-import net.minecraft.class_5617;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.client.render.entity.EntityRendererFactory;
 
 public class HamstersVanillaIntegration {
    public static void serverInit() {
    }
 
-   public static <T extends class_1297> void registerEntityRenderers(Supplier<class_1299<T>> type, class_5617<T> renderProvider) {
-      EntityRendererRegistry.register((class_1299)type.get(), renderProvider);
+   public static <T extends Entity> void registerEntityRenderers(Supplier<EntityType<T>> type, EntityRendererFactory<T> renderProvider) {
+      EntityRendererRegistry.register((EntityType)type.get(), renderProvider);
    }
 
    @Environment(EnvType.CLIENT)

@@ -1,39 +1,36 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
-	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"id": "hamsters",
+	"version": "1.0.0+1.21.1",
+	"name": "Hamsters",
+	"description": "Introducing small, fluffy, and adorable hamsters to Minecraft!",
 	"authors": [
-		"Me!"
+		"Starfish Studios, Ninni, crispytwig"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://www.curseforge.com/minecraft/mc-mods/hamsters",
+		"issues": "https://github.com/starfish-studios/Hamsters/issues"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"license": "MIT",
+	"icon": "assets/hamsters/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"com.starfish_studios.hamsters.Hamsters"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"com.starfish_studios.hamsters.HamstersClient"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
-		{
-			"config": "modid.client.mixins.json",
-			"environment": "client"
-		}
+		"hamsters.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": "~1.21.5",
+		"fabricloader": ">=0.16.7",
+		"fabric-api": "*",
+		"minecraft": "1.21.1",
 		"java": ">=21",
-		"fabric-api": "*"
+		"geckolib": ">=4.2.4"
 	},
 	"suggests": {
 		"another-mod": "*"
